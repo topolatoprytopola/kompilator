@@ -1,7 +1,10 @@
 int main()
 {
 int a=2;
-int c=4;
-int b = c/a;
+int b = 3;
+if(a>=b)
+{
+    b--;
+}
 return b;
 }

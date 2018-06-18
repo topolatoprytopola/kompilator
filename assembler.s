@@ -4,13 +4,13 @@ main:
 push rbp
 mov rbp, rsp
 mov DWORD PTR [rbp-4],2
-mov DWORD PTR [rbp-8],4
+mov DWORD PTR [rbp-8],3
+mov eax, DWORD PTR [rbp-4]
+cmp eax, DWORD PTR [rbp-8]
+jng .L2
+sub DWORD PTR [rbp-8], 1 
+.L2:
 mov eax, DWORD PTR [rbp-8]
-mov edx, DWORD PTR [rbp-4]
-cdq 
-idiv eax, edx
-mov DWORD PTR [rbp-12], eax
-mov eax, DWORD PTR [rbp-12]
 pop rbp
 ret
 
